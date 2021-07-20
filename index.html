@@ -21,17 +21,38 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script src="bower_components/aos/dist/aos.js"></script>
     <link rel="stylesheet" href="style.css">
     <script>
         $('.carousel').carousel({
             interval: 10
         })
     </script>
+    <script>
+        AOS.init();
+      </script>
     <style>
         .carousel-inner img {
             width: 100%;
             height: 100%;
         }
+        @keyframes zoomEffect {
+    from {transform: scale(0, 0)}
+    to {transform: scale(1, 1)}
+}
+
+.animate-flicker{
+    content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+    animation: 2s ease 0s normal none  running zoomEffect;
+  -webkit-animation: 2s ease 0s normal none  running zoomEffect;
+  -o-animation: 2s ease 0s normal none  running zoomEffect;
+}
     </style>
 </head>
 
@@ -114,9 +135,9 @@
     </div>
     <div class="home container d-flex justify-content-center pt-4">
         <h1 class="d-lg-inline d-md-inline d-sm-block text-center text-large position-absolute">AirPods Max</h1>
-        <img class="img-responsive d-lg-inline d-md-inline d-sm-block position-relative" src="res/airpods.png"
+        
+        <img class="img-responsive d-lg-inline d-md-inline d-sm-block position-relative animate-flicker" src="res/airpods.png"
             width="470px" height="530px">
-
     </div>
     <div class="con row d-flex justify-content-center pt-5">
         <h3 class="col-sm-12 col-md-9 col-lg-8 text-center pt-4" style="font-weight: 600;">Introducing AirPods Max — a
@@ -313,7 +334,6 @@
                 <img src="res/headphone.jpeg" alt="" width="100%">
             </div>
             <div id="carouselExample" class="col-4 carousel vert slide my-auto justify-content-center" data-ride="carousel" data-interval="3000">
-                
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <h4  style="color:white;">One-tap setup</h4>
@@ -371,7 +391,7 @@
                 <img src="images/audioring2.png" class="justify-content-center">
                 <img src="images/man.png" class="justify-content-center"style="z-index=-1;position: relative;">
                 <!-- <img src="images/audioring.png" class="man justify-content-center"> -->
-                <p class="text-secondary mt-5 position-absolute"style="z-index:1;padding-top: 65%;padding-right: 70%;"><b><span style="color: white;">Spatial audio with dynamic head tracking</span> gives you a theater‑like experience for movies and shows, with sound that surrounds you. Using built-in gyroscopes and accelerometers, AirPods Max and your iPhone or iPad track the subtle motion of your head, anchoring sounds to your&nbsp;device.</b></p>
+                <p class="text-secondary mt-5 position-absolute"style="z-index:1;padding-top: 65%;padding-right: 70%;"><b><span style="color: white;">Spatial audio with dynamic head tracking</span> gives you a theater‑like experience for movies and shows, with sound that surrounds you.<sup class="footnote footnote-number"><a href="#footnote-1" aria-label="Footnote 1">1</a></sup> Using built-in gyroscopes and accelerometers, AirPods Max and your iPhone or iPad track the subtle motion of your head, anchoring sounds to your&nbsp;device.</b></p>
             </div>
             </section>
         </div>
@@ -389,11 +409,10 @@
     </div>
     <div class="row">
         <div class="col-8">
-            <img class="col-12"src="images/phonephoto.jpg"></img>
+            <img class="col-12 "src="images/phonephoto.jpg"></img>
             <!-- <img  src="images/wal.jpg"style="height:500px;position: relative;z-index:4;margin-left:60%"> -->
         </div>
         <div id="carouselExample" class="col-4 carousel vert slide my-auto justify-content-center" data-ride="carousel" data-interval="3000">
-            
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <h4 id="carcon" style="color:black;">One-tap setup</h4>
